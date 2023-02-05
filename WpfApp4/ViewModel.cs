@@ -14,6 +14,11 @@ namespace WpfApp4
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        double firstNum = 0; //первое число
+        double secondNum = 0; //второе число
+
+        int choice = -1; //индекс
+
         public List<string> CbChange //заполняем Combobox
         {
             get
@@ -29,27 +34,6 @@ namespace WpfApp4
                 return Model.count.ToString();
             }
         }
-
-        double firstNum = 0; //первое число
-        double secondNum = 0; //второе число
-
-        public double TBFirstNum //для первого числа
-        {
-            set
-            {
-                firstNum = value;
-            }
-        }
-
-        public double TBSecondNum //для второго числа
-        {
-            set
-            {
-                secondNum = value;
-            }
-        }
-
-        int choice = -1; //индекс
 
         public int IndexSelected //находим индекс выбранного элемента
         {
@@ -75,14 +59,24 @@ namespace WpfApp4
             }
         }
 
+        public double TBFirstNum //для первого числа
+        {
+            set
+            {
+                firstNum = value;
+            }
+        }
+
+        public double TBSecondNum //для второго числа
+        {
+            set
+            {
+                secondNum = value;
+            }
+        }
+
         public RoutedCommand BtnCommand { get; set; } = new RoutedCommand();
         public CommandBinding bind;
-        
-        //private void OnPreviewTextInput(object sender, TextCompositionEventArgs e)
-        //{
-        //    e.Handled = "0123456789,".IndexOf(e.Text) < 0;
-
-        //}
 
         public void calculations(object sender, ExecutedRoutedEventArgs e)
         {

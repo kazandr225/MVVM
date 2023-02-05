@@ -8,7 +8,7 @@ namespace WpfApp4
 {
     static class Model
     {
-        public static double? count = null;
+        public static double count = 0;
 
         public static List<string> datalist = new List<string> { "Сложение", "Вычитание", "Деление", "Умножение" };
         public static List<string> dataSymb = new List<string> { "+", "-", "*", "/" };
