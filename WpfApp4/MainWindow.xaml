@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfApp4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical" Width="215" Height="220">
+
+            <TextBlock HorizontalAlignment="Center">Выберите арифметическую операцию</TextBlock>
+            <ComboBox ItemsSource="{Binding CbChange}" SelectedIndex="{Binding IndexSelected}" Name="cbOperations" ></ComboBox>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBox Text="{Binding TBFirstNum}" Name="tbFirstNum" Width="45" HorizontalAlignment="Left" Margin="35,10,0,10" PreviewTextInput="OnPreviewTextInput"/>
+                <TextBlock Text="{Binding TBkSymb}" Name="tbSymb" HorizontalAlignment="Center" Margin="20,10,20,10"></TextBlock>
+                <TextBox Text="{Binding TBSecondNum}" Name="tbSecondNum" Width="45" HorizontalAlignment="Right" Margin="5,10,0,10" PreviewTextInput="OnPreviewTextInput"/>
+            </StackPanel>
+
+            <Button Command="{Binding BtnCommand}" Name="btnResult">Вычислить</Button>
+
+            <GroupBox Header="Результат:">
+                <TextBox Text="{Binding TBResult, Mode=OneWay}" Name="tbResult"></TextBox>
+            </GroupBox>
+
+        </StackPanel>
+    </Grid>
+</Window>
